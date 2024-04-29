@@ -5,16 +5,16 @@ import serial
 
 import geometry_msgs.msg
 import rclpy
-
-# Add your Arduino's serial port here
-SERIAL_PORT = '/dev/ttyUSB0'  # Example port, replace with your Arduino's port
-BAUD_RATE = 9600
-
 if sys.platform == 'win32':
     import msvcrt
 else:
     import termios
     import tty
+# Add your Arduino's serial port here
+SERIAL_PORT = '/dev/tty'  # Example port, replace with your Arduino's port
+BAUD_RATE = 9600
+
+
 
 
 msg = """
