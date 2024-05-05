@@ -8,7 +8,7 @@ controller_manager:
         type: ackermann_steering_controller/AckermannSteeringController       
     
     jsc:
-      type: joint_state_broadcaster/JointStateBroadcaster
+        type: joint_state_controller/JointStateController
     
 asc:
   ros__parameters:
@@ -18,6 +18,8 @@ asc:
     open_loop: false
     velocity_rolling_window_size: 10
     position_feedback: false
+    odom_frame_id: odom
+    enable_odom_tf: true
     use_stamped_vel: true
 
     rear_wheels_names: [rear_right_joint, rear_left_joint]
@@ -31,7 +33,7 @@ asc:
     rear_wheels_radius: 0.1
     
     
-#jsc:
+# jsc:
 #  ros__parameters:
 #    type: joint_state_controller/JointStateController
 

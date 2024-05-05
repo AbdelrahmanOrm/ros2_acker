@@ -20,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = temp_teleop.submit:main',
-            'arduino = temp_teleop.arduino:main',
+            'talker = temp_teleop.submit:main'
         ],
     },
 )

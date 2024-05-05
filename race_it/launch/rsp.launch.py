@@ -40,11 +40,12 @@ def generate_launch_description():
     )
     
     
-        
+    
     joint_state_publisher_node = launch_ros.actions.Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
-        name='joint_state_publisher'
+        name='joint_state_publisher',
+        parameters=[{'use_sim_time' : use_sim_time}]
     )
     
 
@@ -75,7 +76,8 @@ def generate_launch_description():
     package="controller_manager",
     executable="spawner",
     arguments=["asc"],
-)
+    )
+
 
     # Launch!
     return LaunchDescription([
@@ -89,5 +91,5 @@ def generate_launch_description():
         rviz_node,
         gazebo,
         spawn_entity,
-        ackermann_spawner
+        ackermann_spawner,
     ])
